@@ -1,0 +1,28 @@
+import Container from "../global/Container";
+import CartButton from "./CartButton";
+import DarkMode from "./DarkMode";
+import LinksDropdown from "./LinksDropdown";
+import Logo from "./Logo";
+import NavSearch from "./NavSearch";
+import { Suspense } from "react";
+
+function Navbar() {
+  return (
+    <nav className="border-b bg-primary-200">
+      <Container className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 flex-wrap py-8">
+        {/* Add the Logo component here */}
+        <Logo />
+        <Suspense>
+          <NavSearch />
+        </Suspense>
+        <div className="flex gap-4 items-center">
+          <CartButton />
+          <DarkMode />
+          <LinksDropdown />
+        </div>
+      </Container>
+    </nav>
+  );
+}
+
+export default Navbar;
