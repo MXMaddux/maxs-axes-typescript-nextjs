@@ -17,7 +17,8 @@ async function GuitarsContainer({
   const layoutString = typeof layout === "string" ? layout : "grid";
   const searchString = typeof search === "string" ? search : "";
 
-  const guitars = await fetchAllGuitars({ search });
+  // Pass searchString (not search) to fetchAllGuitars
+  const guitars = await fetchAllGuitars({ search: searchString });
   const totalGuitars = guitars.length;
   const searchTerm = searchString ? `&search=${searchString}` : "";
 

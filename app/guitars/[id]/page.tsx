@@ -6,8 +6,13 @@ import FavoriteToggleButton from "@/components/guitars/FavoriteToggleButton";
 import AddToCart from "@/components/single-guitar/AddToCart";
 import GuitarRating from "@/components/single-guitar/GuitarRating";
 
-async function SingleGuitarPage({ params }: { params: { id: string } }) {
-  const guitar = await fetchSingleGuitar(params.id);
+async function SingleGuitarPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const id = (await params).id;
+  const guitar = await fetchSingleGuitar(id);
   const { model, image, company, description, price } = guitar;
   const dollarsAmount = formatCurrency(price);
 
@@ -30,15 +35,15 @@ async function SingleGuitarPage({ params }: { params: { id: string } }) {
         <div>
           <div className="flex gap-x-8 items-center">
             <h1 className="capitalize text-3xl font-bold">{model}</h1>
-            <FavoriteToggleButton guitarId={params.id} />
+            <FavoriteToggleButton guitarId={id} />
           </div>
-          <GuitarRating guitarId={params.id} />
+          <GuitarRating guitarId={id} />
           <h4 className="text-xl mt-2">{company}</h4>
           <p className="mt-3 text-md bg-muted inline-block p-2 rounded-md">
             {dollarsAmount}
           </p>
           <p className="mt-6 leading-8 text-muted-foreground">{description}</p>
-          <AddToCart guitarId={params.id} />
+          <AddToCart guitarId={id} />
         </div>
       </div>
     </section>

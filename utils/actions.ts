@@ -1,5 +1,6 @@
 import db from "@/utils/db";
 import { redirect } from "next/navigation";
+import { Guitar } from "@prisma/client";
 
 export const fetchFeaturedGuitars = async () => {
   const guitars = await db.guitar.findMany({
@@ -30,6 +31,8 @@ export const fetchSingleGuitar = async (guitarId: string) => {
       id: guitarId,
     },
   });
-  if (!guitar) redirect("/guitars");
+  if (!guitar) {
+    redirect("/guitars");
+  }
   return guitar;
 };
