@@ -1,3 +1,5 @@
+"use server";
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,14 +12,22 @@ import Link from "next/link";
 import { Button } from "../ui/button";
 import { links } from "@/utils/links";
 import UserIcon from "./UserIcon";
-import { SignedIn, SignedOut, SignInButton, SignUpButton } from "@clerk/nextjs";
+import { SignInButton, SignedIn, SignedOut, SignUpButton } from "@clerk/nextjs";
 import SignOutLink from "./SignOutLink";
+import { auth } from "@clerk/nextjs/server";
 
-function LinksDropdown() {
+async function fetchUserId() {
+  const { userId } = await auth();
+  return userId;
+}
+
+async function LinksDropdown() {
+  const userId = await fetchUserId();
+  const isAdmin = userId === process.env.ADMIN_USER_ID;
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant={"outline"} className="flex gap-4 max-w-[100px]">
+        <Button variant="outline" className="flex gap-4 max-w-[100px]">
           <LuAlignLeft className="w-6 h-6" />
           <UserIcon />
         </Button>
@@ -38,6 +48,7 @@ function LinksDropdown() {
         </SignedOut>
         <SignedIn>
           {links.map((link) => {
+            if (link.label === "dashboard" && !isAdmin) return null;
             return (
               <DropdownMenuItem key={link.href}>
                 <Link href={link.href} className="capitalize w-full">

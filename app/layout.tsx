@@ -8,6 +8,11 @@ import { ClerkProvider } from "@clerk/nextjs";
 
 const inter = Inter({ subsets: ["latin"] });
 
+export const metadata: Metadata = {
+  title: "Your App Name",
+  description: "Your app description",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
