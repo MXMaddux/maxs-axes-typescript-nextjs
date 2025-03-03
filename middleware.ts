@@ -9,16 +9,17 @@ export default clerkMiddleware(async (auth, req) => {
   try {
     // Await the auth() function to get the ClerkMiddlewareAuthObject
     const authObject = await auth();
-    const isAdminUser = authObject.userId === process.env.ADMIN_USER_ID;
+    const userId = authObject.userId; // Get the user ID
+    const isAdminUser = userId === process.env.ADMIN_USER_ID;
 
     // Redirect non-admin users trying to access admin routes
     if (isAdminRoute(req) && !isAdminUser) {
       return NextResponse.redirect(new URL("/", req.url));
     }
 
-    // Protect non-public routes
-    if (!isPublicRoute(req)) {
-      await auth().protect(); // Use auth().protect() directly
+    // Protect non-public routes by checking if the user is authenticated
+    if (!isPublicRoute(req) && !userId) {
+      return NextResponse.redirect(new URL("/sign-in", req.url)); // Redirect to sign-in page
     }
   } catch (error) {
     console.error("Middleware Error:", error);
