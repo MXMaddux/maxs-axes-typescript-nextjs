@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false, // Allow emitting JavaScript files
+    "module": "commonjs", // Use CommonJS for Node.js compatibility
+    "outDir": "./dist" // Output compiled files to the `dist` directory
+  },
+  "include": ["utils/seed.ts"] // Include only the seed script
+}

@@ -1,4 +1,4 @@
-import { LucideUser2 } from "lucide-react";
+import { LuUser } from "react-icons/lu";
 import { currentUser } from "@clerk/nextjs/server";
 
 async function UserIcon() {
@@ -8,15 +8,10 @@ async function UserIcon() {
 
   if (profileImage) {
     return (
-      <img
-        src={profileImage}
-        alt="profile image"
-        className="w-6 h-6 rounded-full object-cover"
-      />
+      <img src={profileImage} className="w-6 h-6 rounded-full object-cover" />
     );
   }
 
-  return <LucideUser2 className="w-6 h-6 bg-primary rounded-full text-white" />;
+  return <LuUser className="w-6 h-6 bg-primary rounded-full text-white" />;
 }
-
 export default UserIcon;

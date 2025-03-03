@@ -5,7 +5,7 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla auctor ex vel erat pretium blandit quis vel elit. Sed hendrerit porta odio, id fringilla magna fermentum eget. Quisque commodo mauris varius lorem tincidunt, lacinia aliquam ligula dictum. Maecenas cursus tellus sed tincidunt tempus. Suspendisse laoreet vel libero sit amet ornare. Suspendisse potenti. Vestibulum sapien elit, dapibus ut gravida vitae, molestie dictum dui. Morbi sed nisl non erat convallis placerat convallis quis ligula.",
     "image": "https://i.ibb.co/QQHsj0J/IMG-4297.jpg",
     "model": "S-style Partscaster",
-    "price": 899999,
+    "price": 8999,
     "clerkId": "clerkId",
     "featured": true
   },
@@ -15,7 +15,7 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla auctor ex vel erat pretium blandit quis vel elit. Sed hendrerit porta odio, id fringilla magna fermentum eget. Quisque commodo mauris varius lorem tincidunt, lacinia aliquam ligula dictum. Maecenas cursus tellus sed tincidunt tempus. Suspendisse laoreet vel libero sit amet ornare. Suspendisse potenti. Vestibulum sapien elit, dapibus ut gravida vitae, molestie dictum dui. Morbi sed nisl non erat convallis placerat convallis quis ligula.",
     "image": "https://i.ibb.co/7kWzyhT/IMG-4575.jpg",
     "model": "S-style Partscaster",
-    "price": 799999,
+    "price": 7999,
     "clerkId": "clerkId",
     "featured": false
   },
@@ -25,7 +25,7 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla auctor ex vel erat pretium blandit quis vel elit. Sed hendrerit porta odio, id fringilla magna fermentum eget. Quisque commodo mauris varius lorem tincidunt, lacinia aliquam ligula dictum. Maecenas cursus tellus sed tincidunt tempus. Suspendisse laoreet vel libero sit amet ornare. Suspendisse potenti. Vestibulum sapien elit, dapibus ut gravida vitae, molestie dictum dui. Morbi sed nisl non erat convallis placerat convallis quis ligula.",
     "image": "https://i.ibb.co/8bLZT5p/IMG-4599.jpg",
     "model": "S-style Partscaster",
-    "price": 699999,
+    "price": 6999,
     "clerkId": "clerkId",
     "featured": true
   },
@@ -35,7 +35,7 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla auctor ex vel erat pretium blandit quis vel elit. Sed hendrerit porta odio, id fringilla magna fermentum eget. Quisque commodo mauris varius lorem tincidunt, lacinia aliquam ligula dictum. Maecenas cursus tellus sed tincidunt tempus. Suspendisse laoreet vel libero sit amet ornare. Suspendisse potenti. Vestibulum sapien elit, dapibus ut gravida vitae, molestie dictum dui. Morbi sed nisl non erat convallis placerat convallis quis ligula.",
     "image": "https://i.ibb.co/yNFT73q/IMG-6018.jpg",
     "model": "Headless Hoarseman",
-    "price": 799999,
+    "price": 7999,
     "clerkId": "clerkId",
     "featured": false
   }
