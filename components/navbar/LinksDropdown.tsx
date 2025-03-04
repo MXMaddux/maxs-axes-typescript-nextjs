@@ -15,8 +15,17 @@ import SignOutLink from "./SignOutLink";
 import { auth } from "@clerk/nextjs/server";
 
 async function LinksDropdown() {
-  const { userId } = await auth();
-  const isAdmin = userId === process.env.ADMIN_USER_ID;
+  let userId = null;
+  let isAdmin = false;
+
+  try {
+    const { userId: authUserId } = await auth();
+    userId = authUserId;
+    isAdmin = userId === process.env.ADMIN_USER_ID;
+  } catch (error) {
+    console.error("Failed to fetch auth data:", error);
+  }
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -59,4 +68,5 @@ async function LinksDropdown() {
     </DropdownMenu>
   );
 }
+
 export default LinksDropdown;
